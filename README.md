@@ -79,15 +79,33 @@ Some JavaScript code
 
 * **Explain what needs to happen to get a JavaScript program to "run", given the JavaScript you've seen in this assignment.**
 
-	- In the head of the html file we create a tag for script '<scropt> '''js some code in between'''</script>'
+	- In the head of the html file we create a tag for script '<scropt> some code here </script>'
 
 * **What functions in JavaScript seem to be similar in function to the `print` function in Python? (There are two.) Why might you use one and not the other? Explain briefly.**
 
+	- alert() and console.log(). The one similar to 'print' is console.log() which I'd use instead of alert() because it is better for developers' debugging. 
+
 * **What code would have to comment out to get rid of the pop-up box when you load the page? (Related to the last question.) Do that in the code file, and then, add code so that a text box will appear that contains the current date and time! *HINT:* Look through the rest of the code first...**
+
+	- First I commented out: // alert("hello");
+	- Then I added:  alert(Date()); in line 13 of the file
+	**Note: I tried different things and all worked the same. Not sure, whether there is a correct one.**
 
 * **How can you put your own name at the top where it currently says "A name"? Explain very briefly how to do so, and replace `A name` in the web page with your own name.**
 
+	- Withinh the function we are calling the headder h1 and replacing its text with 'A name'. To replace 'A name', I created a variable and assigned it to the selector.
+	```js
+		var nm = "Roberto"
+		document.querySelector('h1').innerHTML = nm;
+	```
+
 * **What does the word `document` represent in this code? Explain briefly.**
+
+	- It refers to the html file that we are writing the javascript code in. The html file represents a web page that becomes the document object.
+	https://www.tutorialspoint.com/javascript/javascript_html_dom.htm
+	https://www.w3schools.com/jsref/dom_obj_document.asp
+
+
 
 * **What is happening in line 12 ( 
 		`document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length`
