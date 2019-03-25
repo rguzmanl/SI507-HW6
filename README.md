@@ -75,7 +75,7 @@ Some JavaScript code
 
 * **What does a code comment look like in JavaScript? What character/s do you have to put before a comment?**
 
-	- Using:  // 'some text' 
+	- Using // like in : // var regex = /^[a-zA-Z]+$/; 
 
 * **Explain what needs to happen to get a JavaScript program to "run", given the JavaScript you've seen in this assignment.**
 
@@ -111,7 +111,7 @@ Some JavaScript code
 		`document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length`
 )? Explain, briefly (<= 2 sentences).**
 
-	- It is calling the item with id '#items' (intended to be the"result") and then it makes it equal to the length or number of list items. The second line calls all elements of type "list" and counts them. 
+	- It is calling the item with id '#items' (which is a line of text within '<p>' the id is assigned to the '<span>' element) and then it makes it equal to the length or number of list items. The second line calls all elements of type "list" and counts them. 
 
 * **What color would the background of this page be <u>if there were no JavaScript in this page</u>?**
 
@@ -119,7 +119,8 @@ Some JavaScript code
 
 * **Why are there a couple of gray boxes on the screen with a different colored border? How could you edit this code to make them a different color? Explain briefly. Then edit the code to make those boxes some shade of blue, of your choosing.**
 
-	- We are using CSS styiling in the <p></p> elements. 
+	- Because there are two tags (elements) for which we assigned some styling that allows us to see their "box" within the web page. https://learn.shayhowe.com/html-css/opening-the-box-model/
+	- We are using CSS styiling in the two 'p' elements. 
 	```js
 		p{
 		/* background-color: #b3b3b3; */
@@ -133,7 +134,7 @@ Some JavaScript code
 
 * **Edit the code so that, if you highlight `McGill University` and copy it, you see the text `O Canada` near the bottom of the page. Briefly explain why you made the edits that you did -- how did you know/figure out what to do?**
 
-- Not the most efficient way but this is what I did. I created a second function copyFunction2() the execut an "oncopy" event. That function is invoked in the list element of McGill University. I added a footer and a div inside in order to display 'O Canada' closer to the bottom of the page. I used some CSS styling in order to position the text. I tried to use some concepts from SI-539 but I didn't go into detail.
+- Not the most efficient way but this is what I did. I created a second function copyFunction2() the execut an "oncopy" event. That function is invoked in the list element of McGill University. I added a footer and a div inside in order to display 'O Canada' closer to the bottom of the page. I used some CSS styling in order to position the text, specifically I played with the top margin. I tried to use some concepts from SI-539 but I didn't go into detail.
 
 
 
@@ -149,12 +150,20 @@ function handleClick(){
 ```js
 <button onclick=handleClick() id="wow-button">Wow</button>
 ```
-- The code uses the javascript event "onclick" and it is applyed in the object button by invoking a function that determines what happens when we click on the button. The funciton executes the alert() which is a popup window with a message.
+- The code uses the javascript event "onclick" and it is applied in the object button by invoking a function that determines what happens when we click on the button. The funciton executes the alert() which is a popup window with a message.
 
 
 * **Knowing what you learned from the previous question, add code/markup to the `jsPracticeLab.html` file *so that* there is a button with the text `Spring Equinox 2019` on it somewhere on the page, and when that button is clicked, a text box containing the text `March 20, 2019` appears. (There's no function -- that I am aware of -- to automatically get this info, you've got to type it yourself.)**
 
+	- Code added:
+	```js
+	<button onclick=handleClick() id="wow-button">Wow</button>
 
+	'within <script>':
+	function anotherClick(){
+		alert("March 20, 2019");
+
+	```
 
 ### The next few questions address the `jquerylib_submit_example.html` file.
 
