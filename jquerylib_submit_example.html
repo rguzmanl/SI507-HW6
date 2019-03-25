@@ -13,16 +13,19 @@
     }
 </style>
 <script type="text/javascript">
+
 $(document).ready(function(){
     $("form").submit(function(event){
-        var regex = /^[a-zA-Z]+$/;
+        // var regex = /^[a-zA-Z]+$/;
+        var regex = /^[hello]+$/;
         var currentValue = $("#oneWord").val();
+        console.log(currentValue);
         if(regex.test(currentValue) == false){
             $("#result").html('<p class="error">Not valid!</p>').show().fadeOut(10000);
             // Preventing form submission
             event.preventDefault();
         } else {
-            $("#result").html('<p class="good">Nice!</p>').show().fadeOut(10000);
+            $("#result").html('<p class="good">Hello to you too!</p>').show().fadeOut(10000);
         }
     });
 });

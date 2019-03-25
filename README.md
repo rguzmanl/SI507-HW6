@@ -149,7 +149,7 @@ function handleClick(){
 ```js
 <button onclick=handleClick() id="wow-button">Wow</button>
 ```
-	- The code uses the javascript event "onclick" and it is applyed in the object button by invoking a function that determines what happens when we click on the button. The funciton executes the alert() which is a popup window with a message.
+- The code uses the javascript event "onclick" and it is applyed in the object button by invoking a function that determines what happens when we click on the button. The funciton executes the alert() which is a popup window with a message.
 
 
 * **Knowing what you learned from the previous question, add code/markup to the `jsPracticeLab.html` file *so that* there is a button with the text `Spring Equinox 2019` on it somewhere on the page, and when that button is clicked, a text box containing the text `March 20, 2019` appears. (There's no function -- that I am aware of -- to automatically get this info, you've got to type it yourself.)**
@@ -162,11 +162,24 @@ function handleClick(){
 
 * **When you enter input that isn't valid, you see an error that is red. Why is the error in red? Why is the response for valid inputs blue?**
 
+	- Because we use a conditional to determine whether we are enetring valid data. The valide data is defined in the var regex which specifies only a certain type of characters as valid. When we enter invalid data the conditional executes the CSS style for "error", and when we enter valid data the conditional executes the CSS style for "good"
+
 * **What is this line `var regex = /^[a-zA-Z]+$/;` helping with? And if you googled something to figure that out, what did you google, and what, briefly, did you learn? (If you didn't need to google, you can leave that out, but explain briefly what that line is helping the program do, anyway.)**
+
+	- It defines a regular expression, which defines a special search pattern, and it is used to determine whether pur input is valid or not. 
+	- It means, look for a string of characters that contain a through z (both lower and upper case), and that not contain spaces at the end. 
+
+	- **Note: consulted https://www.w3schools.com/Js/js_regexp.asp and the book by Dr. Charles Severance: Python for Everybody, Exploring Data Using Python 3.**
 
 * **What's different about the syntax of conditional statements in JavaScript, compared to Python?**
 
+	- In JavaScript the statement to validate is within parentheses and the action is within curly brackets {}. The same applies for the else statement that follows. Also, indentation doesn't matter but it is a good practice to use it. JavaScript doesn't have elif, it has else if instead. 
+
+	- In Python the if statment is all in one line without any thype of brackets, it needs a : at the end of the line and indentation matters: Same applies for the elif or else statments that follow.
+
 * **What do you think the `10000` refers to in the code `.fadeOut(10000)`?**
+
+	- Is the time that a line of text remains visible. 1,000 = 1 sec.
 
 * **What do you think is going on with the following code at the beginning of the program? Note that the most important thing to do for answering this question is to be thoughtful and clear, not to be absolutely correct:**
 
@@ -174,6 +187,10 @@ function handleClick(){
 $(document).ready(function(){
     $("form").submit(function(event){
 ```
+- Detects whether the document object model (DOM) is ready for JavaScript code. When it is ready, then it safely runs the function. https://learn.jquery.com/using-jquery-core/document-ready/
+
+- It is an event (submit) that occurs when the form is submitted (click the button submit). It can only be used in form elements. https://api.jquery.com/submit/ and https://www.w3schools.com/jquery/event_submit.asp
+
 
 
 * **Add some code to the `jquerylib_submit_example.html` file so that, if the input is valid and is specifically the text `hello`, rather than the visible output being `Nice!` in blue, the visible output should be `Hello to you too!`, also in blue, just like `Nice!` is.**
