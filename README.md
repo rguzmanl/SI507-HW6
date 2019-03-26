@@ -176,7 +176,7 @@ function handleClick(){
 * **What is this line `var regex = /^[a-zA-Z]+$/;` helping with? And if you googled something to figure that out, what did you google, and what, briefly, did you learn? (If you didn't need to google, you can leave that out, but explain briefly what that line is helping the program do, anyway.)**
 
 	- It defines a regular expression, which defines a special search pattern, and it is used to determine whether pur input is valid or not. 
-	- It means, look for a string of characters that contain a through z (both lower and upper case), and that not contain spaces at the end. 
+	- It means, look for a string of characters that contain a through z (both lower and upper case), and that it matches the end of the line. 
 
 	- **Note: consulted https://www.w3schools.com/Js/js_regexp.asp and the book by Dr. Charles Severance: Python for Everybody, Exploring Data Using Python 3.**
 
@@ -192,15 +192,25 @@ function handleClick(){
 
 * **What do you think is going on with the following code at the beginning of the program? Note that the most important thing to do for answering this question is to be thoughtful and clear, not to be absolutely correct:**
 
-```js
-$(document).ready(function(){
-    $("form").submit(function(event){
-```
-- Detects whether the document object model (DOM) is ready for JavaScript code. When it is ready, then it safely runs the function. https://learn.jquery.com/using-jquery-core/document-ready/
+	```js
+	$(document).ready(function(){
+		$("form").submit(function(event){
+	```
+	- Detects whether the document object model (DOM) is ready for JavaScript code. When it is ready, then it safely runs the function. https://learn.jquery.com/using-jquery-core/document-ready/
 
-- It is an event (submit) that occurs when the form is submitted (click the button submit). It can only be used in form elements. https://api.jquery.com/submit/ and https://www.w3schools.com/jquery/event_submit.asp
+	- It is an event (submit) that occurs when the form is submitted (click the button submit). It can only be used in form elements. https://api.jquery.com/submit/ and https://www.w3schools.com/jquery/event_submit.asp
 
 
 
 * **Add some code to the `jquerylib_submit_example.html` file so that, if the input is valid and is specifically the text `hello`, rather than the visible output being `Nice!` in blue, the visible output should be `Hello to you too!`, also in blue, just like `Nice!` is.**
 	* *HINT:* You'll have to make some changes to the conditional statement, and possibly look up some JavaScript conditional syntax. You'll also need to look carefully at what generates visible output right now.
+
+	- Code modified:
+
+	```js
+	
+	var regex = /^[hello]+$/;
+
+	else {
+            $("#result").html('<p class="good">Hello to you too!</p>').show().fadeOut(10000);
+	```
